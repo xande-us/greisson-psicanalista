@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #1e2a38;
+    --color-secondary: #f8f5f1;
+    --color-accent: #c4a574;
+    --color-ink: #2b2b2b;
+    --color-canvas: #faf8f5;
+    --header-h: 76px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: var(--header-h);
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-feature-settings: "kern", "liga", "calt";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(196, 165, 116, 0.28);
+    color: var(--color-primary);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-playfair), Georgia, serif;
+    color: var(--color-primary);
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Scrollbar discreta */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #efe9e1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d7cbb8;
+    border-radius: 999px;
+    border: 2px solid #efe9e1;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+  }
+}
+
+@layer components {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-6 sm:px-8 lg:px-12;
+  }
+
+  .overline {
+    @apply text-overline font-sans font-medium uppercase text-accent-deep;
+  }
+
+  /* Filete dourado decorativo */
+  .hairline {
+    @apply h-px w-12 bg-accent/60;
+  }
+
+  /* Botão primário premium */
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full
+      bg-primary px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-secondary
+      shadow-soft transition-[transform,box-shadow,background-color,border-color,color] duration-500 ease-premium
+      hover:-translate-y-0.5 hover:shadow-lift focus-visible:outline-none
+      focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2
+      focus-visible:ring-offset-canvas;
+  }
+  .btn-primary::after {
+    content: "";
+    @apply absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 ease-premium;
+  }
+  .btn-primary:hover::after {
+    @apply translate-x-full;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-primary/20
+      bg-transparent px-7 py-3.5 font-sans text-sm font-medium tracking-wide text-primary
+      transition-[transform,box-shadow,background-color,border-color,color] duration-500 ease-premium hover:border-accent hover:bg-primary/[0.03]
+      hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2
+      focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas;
+  }
+
+  .btn-whatsapp {
+    @apply relative inline-flex items-center justify-center gap-2.5 rounded-full bg-accent
+      px-8 py-4 font-sans text-base font-semibold tracking-wide text-primary
+      shadow-glow transition-[transform,box-shadow,background-color,border-color,color] duration-500 ease-premium hover:-translate-y-0.5
+      hover:bg-accent-soft focus-visible:outline-none focus-visible:ring-2
+      focus-visible:ring-primary focus-visible:ring-offset-2;
+  }
+
+  .link-underline {
+    @apply relative transition-colors duration-300 hover:text-accent-deep;
+  }
+}
+
+@layer utilities {
+  /* Textura de grão sutil para profundidade premium */
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: soft-light;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Estados iniciais das animações GSAP — evitam "flash" antes do reveal.
+     Quando o JS está desativado, o conteúdo permanece visível via .no-js abaixo. */
+  [data-animate] {
+    will-change: transform, opacity, filter;
+  }
+}
+
+/* Acessibilidade: respeitar prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
