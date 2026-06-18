@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -143,7 +144,7 @@ export function Hero() {
           >
             Psicanálise para quem busca compreender o próprio sofrimento sem
             pressa, sem fórmulas e sem julgamento. Atendimento online para todo
-            o Brasil e presencial na Ilha do Governador.
+            o Brasil e presencial em Guapimirim.
           </p>
 
           <div data-hero="cta" className="mt-10 flex flex-wrap items-center gap-4">
@@ -182,7 +183,7 @@ export function Hero() {
             </span>
             <span className="inline-flex items-center gap-2">
               <MapPin size={16} className="text-accent-deep" />
-              Presencial · Ilha do Governador
+              Presencial · Guapimirim
             </span>
           </div>
         </div>
@@ -195,14 +196,22 @@ export function Hero() {
 
             {/* Composição abstrata — paisagem tonal noturna */}
             <div className="group relative h-full w-full overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-primary via-primary-800 to-primary-950 shadow-lift">
-              <div className="grain absolute inset-0 opacity-70" />
+              <Image
+                src="/greisson-retrato.jpg"
+                alt="Greisson Carvalho, psicanalista"
+                fill
+                priority
+                sizes="(max-width: 1024px) 90vw, 26rem"
+                className="object-cover"
+              />
 
-              {/* Camada tonal: sugere janela / horizonte */}
+              {/* Camadas tonais editoriais por cima da foto */}
+              <div className="grain absolute inset-0 opacity-40" />
               <div
                 className="absolute inset-0"
                 style={{
                   backgroundImage:
-                    "radial-gradient(ellipse 70% 50% at 50% 18%, rgba(196,165,116,0.22), transparent 60%)",
+                    "radial-gradient(ellipse 70% 50% at 50% 18%, rgba(196,165,116,0.18), transparent 60%)",
                 }}
               />
               <div
@@ -215,19 +224,6 @@ export function Hero() {
 
               {/* Filete dourado horizontal — divisor editorial */}
               <span className="absolute left-10 right-10 top-[44%] h-px bg-accent/30" />
-
-              {/* Marca tipográfica — monograma sutil */}
-              <div className="relative flex h-full flex-col items-center justify-end gap-3 px-10 pb-12 text-center">
-                <span className="font-display text-[5.25rem] font-medium leading-none tracking-tight text-secondary/95">
-                  GC
-                </span>
-                <span className="font-display text-[0.75rem] italic text-secondary/55">
-                  Greisson Carvalho
-                </span>
-                <span className="text-[0.6rem] uppercase tracking-[0.32em] text-accent/70">
-                  Psicanalista
-                </span>
-              </div>
             </div>
 
             {/* Bloco factual de credibilidade — sem clichê de "100% sigilo" */}

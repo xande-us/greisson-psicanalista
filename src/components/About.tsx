@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ShieldCheck, Scale, HandHeart } from "lucide-react";
 import { Reveal } from "./anim/Reveal";
 
@@ -17,26 +18,22 @@ export function About() {
             <div className="relative mx-auto max-w-sm lg:max-w-none">
               <div className="absolute -left-4 -top-4 h-full w-full rounded-[1.75rem] border border-accent/40" />
               <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-primary-800 via-primary to-primary-950 shadow-lift">
-                <div className="grain absolute inset-0 opacity-70" />
+                <Image
+                  src="/greisson-retrato.jpg"
+                  alt="Greisson Carvalho, psicanalista"
+                  fill
+                  sizes="(max-width: 1024px) 90vw, 40vw"
+                  className="object-cover"
+                />
+                {/* Camadas editoriais sutis por cima da foto */}
+                <div className="grain absolute inset-0 opacity-40" />
                 <div
                   className="absolute inset-0"
                   style={{
                     backgroundImage:
-                      "radial-gradient(ellipse 60% 45% at 50% 22%, rgba(196,165,116,0.2), transparent 60%)",
+                      "linear-gradient(to top, rgba(19,28,38,0.45), transparent 55%)",
                   }}
                 />
-                <span className="absolute left-10 right-10 top-[46%] h-px bg-accent/30" />
-                <div className="relative flex h-full flex-col items-center justify-end gap-3 px-10 pb-12 text-center">
-                  <span className="font-display text-[4.5rem] font-medium leading-none tracking-tight text-secondary/95">
-                    GC
-                  </span>
-                  <span className="font-display text-[0.75rem] italic text-secondary/55">
-                    Greisson Carvalho
-                  </span>
-                  <span className="text-[0.6rem] uppercase tracking-[0.32em] text-accent/70">
-                    Psicanalista
-                  </span>
-                </div>
               </div>
 
               {/* Bloco factual — substitui o "100% sigilo" */}

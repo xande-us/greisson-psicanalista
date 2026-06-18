@@ -64,7 +64,7 @@ export function FinalCta() {
                   </span>
                   <span className="inline-flex items-center gap-3">
                     <MapPin size={15} className="text-accent" />
-                    Presencial · Ilha do Governador, RJ
+                    Presencial · Guapimirim, RJ
                   </span>
                 </div>
               </div>

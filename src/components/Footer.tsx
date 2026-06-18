@@ -26,8 +26,8 @@ export function Footer() {
               Psicanalista
             </p>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-ink/65">
-              Atendimento psicanalítico online para todo o Brasil e presencial na
-              Ilha do Governador, Rio de Janeiro. Um espaço seguro, ético e
+              Atendimento psicanalítico online para todo o Brasil e presencial em
+              Guapimirim, Rio de Janeiro. Um espaço seguro, ético e
               sigiloso para compreender o sofrimento e construir novos caminhos.
             </p>
           </div>
@@ -68,10 +68,12 @@ export function Footer() {
                   {site.whatsappDisplay}
                 </a>
               </li>
-              <li className="inline-flex items-center gap-3">
-                <Instagram size={16} className="text-accent-deep" />
-                {site.instagram}
-              </li>
+              {site.instagram && (
+                <li className="inline-flex items-center gap-3">
+                  <Instagram size={16} className="text-accent-deep" />
+                  {site.instagram}
+                </li>
+              )}
               <li>
                 <a
                   href={`mailto:${site.email}`}
@@ -96,7 +98,7 @@ export function Footer() {
         {/* Tags SEO local discretas */}
         <div className="mt-14 border-t border-primary/[0.08] pt-8">
           <p className="text-xs leading-relaxed text-ink/45">
-            Psicanalista na Ilha do Governador · Psicanalista no Rio de Janeiro ·
+            Psicanalista em Guapimirim · Psicanalista no Rio de Janeiro ·
             Psicanalista online · Atendimento psicanalítico online para todo o
             Brasil
           </p>
@@ -106,7 +108,7 @@ export function Footer() {
               reservados.
             </p>
             <a
-              href="#"
+              href="/privacidade"
               className="text-xs text-ink/50 transition-colors hover:text-accent-deep"
             >
               Política de privacidade

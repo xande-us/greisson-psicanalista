@@ -21,16 +21,16 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Greisson Carvalho | Psicanalista — Ilha do Governador e Online",
+    default: "Greisson Carvalho | Psicanalista — Guapimirim e Online",
     template: "%s | Greisson Carvalho Psicanalista",
   },
   description: site.description,
   keywords: [
-    "psicanalista ilha do governador",
+    "psicanalista guapimirim",
     "psicanalista rio de janeiro",
     "psicanalista online",
     "atendimento psicanalítico online",
-    "psicanálise rio de janeiro",
+    "psicanálise guapimirim",
     "Greisson Carvalho psicanalista",
   ],
   authors: [{ name: site.name }],
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     locale: site.locale,
     url: site.url,
     siteName: site.fullTitle,
-    title: "Greisson Carvalho | Psicanalista — Ilha do Governador e Online",
+    title: "Greisson Carvalho | Psicanalista — Guapimirim e Online",
     description: site.description,
     images: [
       {

@@ -26,7 +26,8 @@ export function buildJsonLd() {
     provider: { "@id": `${site.url}/#person` },
     areaServed: [
       { "@type": "Country", name: "Brasil" },
-      { "@type": "City", name: "Rio de Janeiro" },
+      { "@type": "City", name: "Guapimirim" },
+      { "@type": "AdministrativeArea", name: "Rio de Janeiro" },
     ],
     address: {
       "@type": "PostalAddress",
@@ -41,7 +42,7 @@ export function buildJsonLd() {
       "Atendimento psicanalítico presencial",
     ],
     knowsAbout: [
-      "psicanalista ilha do governador",
+      "psicanalista guapimirim",
       "psicanalista rio de janeiro",
       "psicanalista online",
       "atendimento psicanalítico online",

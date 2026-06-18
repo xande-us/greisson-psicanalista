@@ -1,33 +1,27 @@
 import { Reveal } from "./anim/Reveal";
 
 // Seção editorial sóbria — sem cards, sem ícones. Apenas hierarquia tipográfica.
-// Os marcos abaixo são placeholders editáveis em produção pelo profissional.
 const milestones = [
+  // TODO: confirmar com o profissional — linha/abordagem teórica (freudiana,
+  // lacaniana, outra). Mantido em valor neutro e verdadeiro até confirmação.
   {
     label: "Orientação teórica",
-    value: "Psicanálise freudiana clássica",
-    detail: "Trabalho fundamentado na obra de Sigmund Freud",
+    value: "Psicanálise clínica",
+    detail: "Escuta orientada à fala e ao sofrimento singular",
   },
   {
     label: "Formação",
-    value: "Placeholder · Instituição de formação",
-    detail: "A confirmar — placeholder a ser substituído",
+    value: "Escola de Psicanálise de Curitiba (E.P.C.)",
+    detail: "Formação em Psicanálise",
   },
-  {
-    label: "Supervisão clínica",
-    value: "Em supervisão contínua",
-    detail: "Acompanhamento permanente da prática clínica",
-  },
-  {
-    label: "Análise pessoal",
-    value: "Em análise pessoal",
-    detail: "Compromisso ético com o próprio processo analítico",
-  },
+  // TODO: confirmar com o profissional — faixa etária atendida.
   {
     label: "Atendimento",
-    value: "Adultos · Online e presencial",
+    value: "Adolescentes, adultos e terceira idade · Online e presencial",
     detail: "Sessões individuais, com entrevista preliminar",
   },
+  // TODO: confirmar com o profissional — supervisão clínica e análise pessoal.
+  // Marcos removidos até haver confirmação para não afirmar credenciais não verificadas.
 ];
 
 export function Trajectory() {
