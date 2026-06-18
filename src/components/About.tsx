@@ -19,7 +19,7 @@ export function About() {
               <div className="absolute -left-4 -top-4 h-full w-full rounded-[1.75rem] border border-accent/40" />
               <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-primary-800 via-primary to-primary-950 shadow-lift">
                 <Image
-                  src="/greisson-retrato.jpg"
+                  src="/greisson-about.jpg"
                   alt="Greisson Carvalho, psicanalista"
                   fill
                   sizes="(max-width: 1024px) 90vw, 40vw"
