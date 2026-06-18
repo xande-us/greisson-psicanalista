@@ -69,26 +69,30 @@ export function Hero() {
             "-=1.4",
           );
 
-        // Parallax — camadas em velocidades diferentes
-        gsap.to("[data-parallax='slow']", {
-          yPercent: 14,
-          ease: "none",
-          scrollTrigger: {
-            trigger: root.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: 1,
-          },
-        });
-        gsap.to("[data-parallax='badge']", {
-          yPercent: -40,
-          ease: "none",
-          scrollTrigger: {
-            trigger: root.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: 1.4,
-          },
+        // Parallax apenas em telas grandes — no mobile o scroll com scrub
+        // gera repaint contínuo e trava a rolagem. matchMedia ativa/limpa sozinho.
+        const mm = gsap.matchMedia();
+        mm.add("(min-width: 1024px)", () => {
+          gsap.to("[data-parallax='slow']", {
+            yPercent: 14,
+            ease: "none",
+            scrollTrigger: {
+              trigger: root.current,
+              start: "top top",
+              end: "bottom top",
+              scrub: 1,
+            },
+          });
+          gsap.to("[data-parallax='badge']", {
+            yPercent: -40,
+            ease: "none",
+            scrollTrigger: {
+              trigger: root.current,
+              start: "top top",
+              end: "bottom top",
+              scrub: 1.4,
+            },
+          });
         });
       }
     },
@@ -103,8 +107,8 @@ export function Hero() {
     >
       {/* Atmosfera de fundo — gradiente quente sobre canvas, sem grid genérico */}
       <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute -left-[12%] top-[6%] h-[36rem] w-[36rem] rounded-full bg-accent/[0.08] blur-[140px]" />
-        <div className="absolute -right-[8%] bottom-[2%] h-[32rem] w-[32rem] rounded-full bg-primary/[0.05] blur-[140px]" />
+        <div className="absolute -left-[12%] top-[6%] hidden h-[36rem] w-[36rem] rounded-full bg-accent/[0.08] blur-[140px] md:block" />
+        <div className="absolute -right-[8%] bottom-[2%] hidden h-[32rem] w-[32rem] rounded-full bg-primary/[0.05] blur-[140px] md:block" />
         {/* Linhas editoriais horizontais sutis, evocando livro antigo */}
         <div
           className="absolute inset-0 opacity-[0.35]"

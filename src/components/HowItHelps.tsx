@@ -25,7 +25,7 @@ export function HowItHelps() {
       className="grain relative overflow-hidden bg-primary py-section text-secondary"
     >
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-0 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-accent/[0.06] blur-[140px]" />
+        <div className="absolute left-1/2 top-0 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-accent/[0.06] blur-[70px] md:blur-[140px]" />
       </div>
 
       <div className="container-content relative z-10">

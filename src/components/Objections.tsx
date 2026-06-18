@@ -23,7 +23,7 @@ export function Objections() {
   return (
     <section className="grain relative overflow-hidden bg-primary py-section text-secondary">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -right-[8%] top-1/4 h-[28rem] w-[28rem] rounded-full bg-accent/[0.07] blur-[130px]" />
+        <div className="absolute -right-[8%] top-1/4 h-[28rem] w-[28rem] rounded-full bg-accent/[0.07] blur-[70px] md:blur-[130px]" />
       </div>
 
       <div className="container-content relative z-10">
