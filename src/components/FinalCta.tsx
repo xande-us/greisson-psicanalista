@@ -31,7 +31,7 @@ export function FinalCta() {
                   <span className="italic text-accent">sozinho.</span>
                 </h2>
 
-                <p className="mt-7 text-lg leading-relaxed text-secondary/72">
+                <p className="mt-7 text-lg leading-relaxed text-secondary">
                   Inicie uma conversa no canal que preferir. Respondo
                   pessoalmente em até 24h úteis, sem qualquer compromisso. A
                   primeira troca serve apenas para entendermos juntos se faz
